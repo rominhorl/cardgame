@@ -1,15 +1,16 @@
-extends Control
+extends KinematicBody2D
 
 var CardPosition
 var MousePosition
 var MouseHovering = false
 var CardFollowingMouse = false
+var speed = 600
 
-		
+
 func _physics_process(delta):
 	
 	MousePosition = get_viewport().get_mouse_position()
-	CardPosition = rect_position
+	CardPosition = position
 	
 	if MouseHovering and Input.is_action_just_pressed("LeftClick"):
 		if CardFollowingMouse:
@@ -19,8 +20,7 @@ func _physics_process(delta):
 
 	
 	if CardFollowingMouse == true:
-		rect_position.x = MousePosition.x - 111
-		rect_position.y = MousePosition.y - 162.5
+		move_and_slide(((MousePosition - CardPosition)) * speed * delta)
 		
 	
 
