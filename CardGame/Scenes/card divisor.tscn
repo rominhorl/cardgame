@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ColorRect.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Angulo.gd" type="Script" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,31 +13,66 @@ margin_bottom = 393.0
 script = ExtResource( 1 )
 
 [node name="carta1" type="ColorRect" parent="ColorRect"]
-margin_left = -50.0
-margin_right = 50.0
+margin_right = 100.0
 margin_bottom = 200.0
+rect_pivot_offset = Vector2( 50, 200 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="carta2" type="ColorRect" parent="ColorRect"]
-margin_left = -50.0
-margin_right = 50.0
+margin_right = 100.0
 margin_bottom = 200.0
+rect_pivot_offset = Vector2( 50, 200 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="carta3" type="ColorRect" parent="ColorRect"]
-margin_left = -50.0
-margin_right = 50.0
+margin_right = 100.0
 margin_bottom = 200.0
+rect_pivot_offset = Vector2( 50, 200 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="carta4" type="ColorRect" parent="ColorRect"]
-margin_left = -50.0
-margin_right = 50.0
+margin_right = 100.0
 margin_bottom = 200.0
+rect_pivot_offset = Vector2( 50, 200 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="carta5" type="ColorRect" parent="ColorRect"]
-margin_left = -50.0
-margin_right = 50.0
+margin_right = 100.0
 margin_bottom = 200.0
+rect_pivot_offset = Vector2( 50, 200 )
 color = Color( 0, 0, 0, 1 )
+
+[node name="carta6" type="ColorRect" parent="ColorRect"]
+margin_right = 100.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 50, 200 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="carta7" type="ColorRect" parent="ColorRect"]
+margin_right = 100.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 50, 200 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="carta8" type="ColorRect" parent="ColorRect"]
+margin_right = 100.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 50, 200 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Angulo" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="SliderAngulo" type="HSlider" parent="Angulo"]
+margin_left = 45.0
+margin_right = 284.0
+margin_bottom = 17.0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ValorAngulo" type="Label" parent="Angulo"]
+margin_right = 40.0
+margin_bottom = 14.0

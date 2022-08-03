@@ -1,9 +1,11 @@
 extends ColorRect
 
-var nCards = 5
-
+var nCards
+var contas = 2
+#onready var valorAngulo = get_node("../Angulo").valorAngulo
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _process(delta):
+	#print(valorAngulo)
 	var nCards = get_child_count()
 	var spaces = nCards -1
 	var correction = get_children()[0].rect_size.x/2
@@ -12,15 +14,12 @@ func _ready():
 	print(correction)
 	
 	for i in (get_children()):
-		i.rect_position = Vector2(s - correction,100)
 		var relativePosition = (s - rect_size.x/2) / (rect_size.x/2)
-		print("relativo" + str(relativePosition))
-		i.rect_rotation = relativePosition * 10
+		i.rect_rotation = relativePosition * 30
+		i.rect_position = Vector2(s - correction,50 + 30 * abs(pow(relativePosition,2)))
 		s += k
-		print(s)
 		
 	
-	print(rect_size.x)
 	# pegar a posição atual de um filhinho
 	print(get_children()[0].get_global_position())
 
