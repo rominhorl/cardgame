@@ -9,10 +9,13 @@
 extents = Vector2( 81, 121.5 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 394, 207 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 9.5 )
+shape = SubResource( 1 )
 
 [node name="Card Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -23,10 +26,6 @@ texture = ExtResource( 1 )
 [node name="Card icon" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 offset = Vector2( 0, 85 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 9.5 )
-shape = SubResource( 1 )
 
 [node name="Nome" type="Label" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -53,4 +52,5 @@ margin_bottom = 7.0
 text = "Caatinga"
 
 [node name="Card Back" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 4 )
