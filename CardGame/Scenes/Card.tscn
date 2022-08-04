@@ -1,25 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Card.gd" type="Script" id=1]
-[ext_resource path="res://Assets/CardAmazonia.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 82, 123.75 )
 
 [node name="Card" type="KinematicBody2D"]
-position = Vector2( 891, 378 )
 script = ExtResource( 1 )
-
-[node name="Size" type="Container" parent="."]
-margin_left = -81.0
-margin_top = -109.0
-margin_right = 83.0
-margin_bottom = 137.0
-mouse_filter = 2
 
 [node name="FrontBg" type="Sprite" parent="."]
 position = Vector2( 4.5, 13 )
-texture = ExtResource( 2 )
+
+[node name="Type" type="Sprite" parent="."]
+position = Vector2( 4.5, 90 )
 
 [node name="Name" type="Label" parent="."]
 modulate = Color( 0, 0, 0, 1 )

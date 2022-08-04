@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/card shapes/Artboard3_6.png" type="Texture" id=1]
-[ext_resource path="res://Assets/animals/placeholder/periquit.png" type="Texture" id=2]
-[ext_resource path="res://Assets/type icons/Artboard4_3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/animals/placeholder/Periquito.png" type="Texture" id=2]
+[ext_resource path="res://Assets/type icons/Consumidor1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/card shapes/Artboard3.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]

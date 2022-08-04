@@ -13,11 +13,6 @@ config_version=4
 config/name="CardGame"
 config/icon="res://icon.png"
 
-[display]
-
-window/size/width=1000
-window/size/height=500
-
 [input]
 
 LeftClick={
