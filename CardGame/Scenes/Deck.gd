@@ -11,7 +11,8 @@ var deltaVar
 var CardSpeedMove = 600
 
 func _ready():
-	HandPoints = draw_circle_arc(MidScreen+Vector2(0,MidScreen.y), get_viewport().size.x*0.4, get_viewport().size.y*0.25, -90, 90, Color(0.0, 1.0, 0.0))
+	HandPoints = draw_circle_arc(MidScreen+Vector2(0,MidScreen.y*1.2), get_viewport().size.x*0.4, get_viewport().size.y*0.25, -90, 90, Color(0.0, 1.0, 0.0))
+	print(range(5))
 
 func _process(delta):
 	
@@ -48,61 +49,14 @@ func draw_a_card():
 	CardsHand.append(NewCard.name)
 	$Hand.add_child(NewCard)
 #	OrganizeHand(deltaVar,CardSpeedMove)
-	print(CardsHand)
 	
 #~~~~~~~~~~~~~~~~~~~~~~Organizar a mão~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 
 func OrganizeHand(delta,CardSpeedMove):
-	
-	match CardsHand.size():
-		1:
-			$Hand.get_node(str(CardsHand[0])).move_and_slide((HandPoints[100]-$Hand.get_node(str(CardsHand[0])).position)*delta*CardSpeedMove)
-			continue
-		2:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.05+i*0.1
-			continue
-		3:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.1+i*0.1
-			continue
-		4:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.15+i*0.1
-			continue
-		5:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.2+i*0.1
-			continue
-		6:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.25+i*0.1
-			continue
-		7:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.30+i*0.1
-			continue
-		8:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.35+i*0.1
-			continue
-		9:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.40+i*0.1
-			continue
-		10:
-			for i in range(CardsHand.size()):
-				$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[50+(i+0.5)*100/CardsHand.size()]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
-				$Hand.get_node(str(CardsHand[i])).rotation = -0.45+i*0.1
-			continue
+	for i in range(CardsHand.size()):
+			$Hand.get_node(str(CardsHand[i])).move_and_slide((HandPoints[(100-5*(CardsHand.size()-1))+i*10]-$Hand.get_node(str(CardsHand[i])).position)*delta*CardSpeedMove)
+			$Hand.get_node(str(CardsHand[i])).rotation = -0.05*(CardsHand.size()-1)+i*0.1
+			$Hand.get_node(str(CardsHand[i])).z_index = i
 	
 #~~~~~~~~~~~~~~~~~~~~~Função para plotar a elipse~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
