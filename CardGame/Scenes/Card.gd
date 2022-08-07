@@ -24,6 +24,7 @@ func _physics_process(delta):
 	
 	if CardFollowingMouse == true:
 		move_and_slide(((MousePosition - CardPosition)) * speed * delta)
+		rotation = 0
 		
 
 func IsOnTop():
