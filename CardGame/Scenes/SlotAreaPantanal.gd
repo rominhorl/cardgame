@@ -12,10 +12,11 @@ func _physics_process(delta):
 
 func CardPlaced(name):
 	connect("PositionValid",get_parent().get_node("Deck&Hand/Hand").get_node(name),"PositionValid")
-	if MouseHovering == true and get_parent().get_node("Deck&Hand/Hand").get_node(name).get_node("Biome").text == "Caatinga":
+	if MouseHovering == true and get_parent().get_node("Deck&Hand/Hand").get_node(name).get_node("Biome").text == "Pantanal":
 		IsCardRelationValid(name)
 		if CardMatch == true:
 			CardList.append(name)
+#			get_parent().get_node("Deck&Hand/Hand").get_node(name).position = position + Vector2(0+100*CardList.size(),0)
 			get_parent().get_node("Deck&Hand/Hand").get_node(name).z_index = CardList.size()
 			emit_signal("PositionValid")
 			CardMatch = false

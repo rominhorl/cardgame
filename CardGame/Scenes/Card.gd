@@ -10,6 +10,9 @@ var IsPositionValid = false
 
 func _ready():
 	connect("CardPlaced",get_parent().get_parent().get_parent().get_node("SlotAreaCaatinga"),"CardPlaced")
+	connect("CardPlaced",get_parent().get_parent().get_parent().get_node("SlotAreaAmazonia"),"CardPlaced")
+	connect("CardPlaced",get_parent().get_parent().get_parent().get_node("SlotAreaAtlantica"),"CardPlaced")
+	connect("CardPlaced",get_parent().get_parent().get_parent().get_node("SlotAreaPantanal"),"CardPlaced")
 	CardPositionOnHand = get_parent().get_parent().CardsHand.find(name)
 
 func _physics_process(delta):

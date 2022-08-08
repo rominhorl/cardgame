@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bananeira.png-6e82858b6a4f8c103a10ec5b185f42c2.stex"
+path="res://.import/Mico Leão Dourado.png-45438e05222ee29c634bf7bbc7a9271d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/animals/mata atlantica/Bananeira.png"
-dest_files=[ "res://.import/Bananeira.png-6e82858b6a4f8c103a10ec5b185f42c2.stex" ]
+source_file="res://Assets/animals/Mata Atlântica/Mico Leão Dourado.png"
+dest_files=[ "res://.import/Mico Leão Dourado.png-45438e05222ee29c634bf7bbc7a9271d.stex" ]
 
 [params]
 

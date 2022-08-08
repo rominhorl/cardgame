@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fungo.png-c371414db233eadc8502658cc9d8f6d4.stex"
+path="res://.import/Gavião.png-4bb5c5647e09bb9a4fd92235230120bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/animals/mata atlantica/fungo.png"
-dest_files=[ "res://.import/fungo.png-c371414db233eadc8502658cc9d8f6d4.stex" ]
+source_file="res://Assets/animals/Mata Atlântica/Gavião.png"
+dest_files=[ "res://.import/Gavião.png-4bb5c5647e09bb9a4fd92235230120bd.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/teiu.png-a7e9cc7e5c7d6eed9e3f0bfa794a77f2.stex"
+path="res://.import/Amazônia.png-dff15b90acd5c9f16b237949be974f72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/animals/placeholder/teiu.png"
-dest_files=[ "res://.import/teiu.png-a7e9cc7e5c7d6eed9e3f0bfa794a77f2.stex" ]
+source_file="res://card shapes/Amazônia.png"
+dest_files=[ "res://.import/Amazônia.png-dff15b90acd5c9f16b237949be974f72.stex" ]
 
 [params]
 

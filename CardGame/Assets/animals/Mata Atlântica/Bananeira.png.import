@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Gavião.png-2478b4fa50d9186a1d01b85c9df5b2a0.stex"
+path="res://.import/Bananeira.png-c1e023f1c5427b64ecad1494a633efad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/animals/mata atlantica/Gavião.png"
-dest_files=[ "res://.import/Gavião.png-2478b4fa50d9186a1d01b85c9df5b2a0.stex" ]
+source_file="res://Assets/animals/Mata Atlântica/Bananeira.png"
+dest_files=[ "res://.import/Bananeira.png-c1e023f1c5427b64ecad1494a633efad.stex" ]
 
 [params]
 

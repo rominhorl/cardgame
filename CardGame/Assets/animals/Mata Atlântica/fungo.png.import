@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mico Leão Dourado.png-fc7df5710bffefe9446c7837b59bbdd1.stex"
+path="res://.import/fungo.png-38d163c692b306fdd8d20029c51229ee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/animals/mata atlantica/Mico Leão Dourado.png"
-dest_files=[ "res://.import/Mico Leão Dourado.png-fc7df5710bffefe9446c7837b59bbdd1.stex" ]
+source_file="res://Assets/animals/Mata Atlântica/fungo.png"
+dest_files=[ "res://.import/fungo.png-38d163c692b306fdd8d20029c51229ee.stex" ]
 
 [params]
 

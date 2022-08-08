@@ -33,6 +33,7 @@ func _on_DeckArea_mouse_exited():
 
 func draw_a_card():
 	CardNamer += 1
+	randomize()
 	var CardRandom = randi()%CardList.CardList.size()
 	var AuxiliaryList = CardList.CardList.keys()
 	var WhichCard = CardList.CardList.get(AuxiliaryList[CardRandom])
