@@ -1,14 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Deck.gd" type="Script" id=1]
-[ext_resource path="res://card shapes/Artboard3.png" type="Texture" id=2]
+[ext_resource path="res://card shapes/deck.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 82, 122.5 )
+extents = Vector2( 82, 144.75 )
 
 [node name="Deck&Hand" type="Control"]
+margin_left = -6.0
+margin_top = -29.0
+margin_right = -6.0
+margin_bottom = -29.0
 mouse_filter = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Deck" type="Node2D" parent="."]
 position = Vector2( 1828, 947 )
@@ -19,12 +26,13 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Deck"]
 position = Vector2( 0, -9 )
 texture = ExtResource( 2 )
+offset = Vector2( 0, -20 )
 
 [node name="DeckArea" type="Area2D" parent="Deck"]
 position = Vector2( -110, -178 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/DeckArea"]
-position = Vector2( 110, 179 )
+position = Vector2( 110, 156.75 )
 shape = SubResource( 1 )
 
 [node name="Hand" type="Node2D" parent="."]

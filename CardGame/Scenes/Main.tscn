@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Deck.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/SlotAreaCaatinga.gd" type="Script" id=3]
+[ext_resource path="res://Assets/bg/bg.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 123.5, 145 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
 
 [node name="Button" type="Button" parent="."]
 margin_left = 1758.0

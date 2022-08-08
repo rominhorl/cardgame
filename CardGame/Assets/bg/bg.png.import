@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Artboard3_6.png-e3df686607295ae3cb5d1b765c7538b5.stex"
+path="res://.import/bg.png-ff18391540ef249dc10bb4a29d374547.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://card shapes/Artboard3_6.png"
-dest_files=[ "res://.import/Artboard3_6.png-e3df686607295ae3cb5d1b765c7538b5.stex" ]
+source_file="res://Assets/bg/bg.png"
+dest_files=[ "res://.import/bg.png-ff18391540ef249dc10bb4a29d374547.stex" ]
 
 [params]
 
