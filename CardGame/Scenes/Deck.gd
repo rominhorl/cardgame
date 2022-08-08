@@ -36,12 +36,12 @@ func draw_a_card():
 	var CardRandom = randi()%CardList.CardList.size()
 	var AuxiliaryList = CardList.CardList.keys()
 	var WhichCard = CardList.CardList.get(AuxiliaryList[CardRandom])
-	print(WhichCard)
 	var NewCard = Card.instance()
 	NewCard.get_node("FrontBg").texture = load(str("res://card shapes/",WhichCard.get("Biome"),".png"))
 	NewCard.get_node("Type").texture = load(str("res://Assets/type icons/",WhichCard.get("Type"),".png"))
 	NewCard.get_node("Name").text = WhichCard.get("Name")
 	NewCard.get_node("Biome").text = WhichCard.get("Biome")
+	NewCard.get_node("TypeText").text = WhichCard.get("Type")
 	NewCard.name = str("Card",CardNamer)
 	NewCard.position = $Deck.position
 	CardsHand.append(NewCard.name)
