@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/time_tracker.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/turn test.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/turn phase.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/cardCounter.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/turn.gd" type="Script" id=5]
+
+[node name="turn test" type="Node"]
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = -548.0
+margin_right = 150.0
+margin_bottom = -410.0
+rect_scale = Vector2( 4, 4 )
+
+[node name="timer" type="Label" parent="VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+
+[node name="turn phase" type="Label" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 32.0
+script = ExtResource( 3 )
+
+[node name="turn" type="Label" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 100.0
+margin_bottom = 50.0
+script = ExtResource( 5 )
+
+[node name="cards" type="Label" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 100.0
+margin_bottom = 68.0
+text = "cards"
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 100.0
+margin_bottom = 92.0
+text = "pass"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
