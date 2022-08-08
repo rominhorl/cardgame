@@ -39,6 +39,7 @@ func draw_a_card():
 	var NewCard = Card.instance()
 	NewCard.get_node("FrontBg").texture = load(str("res://card shapes/",WhichCard.get("Biome"),".png"))
 	NewCard.get_node("Type").texture = load(str("res://Assets/type icons/",WhichCard.get("Type"),".png"))
+	NewCard.get_node("Animal").texture = load(str("res://Assets/animals/",WhichCard.get("Biome"), "/",WhichCard.get("Name"),".png"))
 	NewCard.get_node("Name").text = WhichCard.get("Name")
 	NewCard.get_node("Biome").text = WhichCard.get("Biome")
 	NewCard.get_node("TypeText").text = WhichCard.get("Type")
