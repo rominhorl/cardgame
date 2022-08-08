@@ -43,5 +43,10 @@ position = Vector2( -107, -109.5 )
 position = Vector2( 111, 130.5 )
 shape = SubResource( 1 )
 
+[node name="TypeText" type="Label" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+
 [connection signal="mouse_entered" from="CardArea" to="." method="_on_CardArea_mouse_entered"]
 [connection signal="mouse_exited" from="CardArea" to="." method="_on_CardArea_mouse_exited"]

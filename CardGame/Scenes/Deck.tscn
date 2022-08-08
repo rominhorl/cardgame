@@ -11,7 +11,7 @@ mouse_filter = 2
 script = ExtResource( 1 )
 
 [node name="Deck" type="Node2D" parent="."]
-position = Vector2( 90, 132 )
+position = Vector2( 1828, 947 )
 __meta__ = {
 "_edit_group_": true
 }
