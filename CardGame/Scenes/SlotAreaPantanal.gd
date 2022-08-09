@@ -19,6 +19,7 @@ func CardPlaced(name):
 			get_parent().get_node("Deck&Hand/Hand").get_node(name).z_index = CardList.size()
 			emit_signal("PositionValid")
 			emit_signal("CountPointsPantanal", CardList.size())
+			playPlaceSound($PlacedSoundP)
 			CardMatch = false
 
 signal PositionValid
@@ -46,6 +47,11 @@ func IsCardRelationValid(name):
 			CardMatch = true
 	else:
 		CardMatch = true
+
+func playPlaceSound(soundNode):
+	randomize()
+	soundNode.pitch_scale = rand_range(0.8,1.2)
+	soundNode.play()
 
 func _on_SlotAreaCaatinga_mouse_entered():
 	MouseHovering = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Deck.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/UI.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/turn phase.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/TurnLabel.gd" type="Script" id=11]
+[ext_resource path="res://Assets/sound/cardPlace1.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 307, 145 )
@@ -41,6 +42,9 @@ position = Vector2( 523, 533 )
 [node name="Slot3" type="Node2D" parent="SlotAreaCaatinga"]
 position = Vector2( 382, 533 )
 
+[node name="PlacedSoundC" type="AudioStreamPlayer" parent="SlotAreaCaatinga"]
+stream = ExtResource( 12 )
+
 [node name="SlotAreaAmazonia" type="Area2D" parent="."]
 script = ExtResource( 5 )
 
@@ -62,6 +66,9 @@ position = Vector2( 523, 215 )
 
 [node name="Slot3" type="Node2D" parent="SlotAreaAmazonia"]
 position = Vector2( 382, 215 )
+
+[node name="PlacedSoundA" type="AudioStreamPlayer" parent="SlotAreaAmazonia"]
+stream = ExtResource( 12 )
 
 [node name="SlotAreaAtlantica" type="Area2D" parent="."]
 script = ExtResource( 7 )
@@ -85,6 +92,9 @@ position = Vector2( 1346, 215 )
 [node name="Slot3" type="Node2D" parent="SlotAreaAtlantica"]
 position = Vector2( 1205, 215 )
 
+[node name="PlacedSoundM" type="AudioStreamPlayer" parent="SlotAreaAtlantica"]
+stream = ExtResource( 12 )
+
 [node name="SlotAreaPantanal" type="Area2D" parent="."]
 script = ExtResource( 6 )
 
@@ -106,6 +116,9 @@ position = Vector2( 1346, 533 )
 
 [node name="Slot3" type="Node2D" parent="SlotAreaPantanal"]
 position = Vector2( 1205, 533 )
+
+[node name="PlacedSoundP" type="AudioStreamPlayer" parent="SlotAreaPantanal"]
+stream = ExtResource( 12 )
 
 [node name="Deck&Hand" parent="." instance=ExtResource( 1 )]
 margin_top = 1.0
@@ -156,6 +169,7 @@ margin_bottom = 805.0
 script = ExtResource( 10 )
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1880.0

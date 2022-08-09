@@ -48,6 +48,7 @@ func draw_a_card():
 	NewCard.name = str("Card",CardNamer)
 	NewCard.position = $Deck.position
 	CardsHand.append(NewCard.name)
+	playDrawSound()
 	$Hand.add_child(NewCard)
 	
 
@@ -73,3 +74,10 @@ func draw_circle_arc(center, radius1, radius2, angle_from, angle_to, color):
 	for index_point in range(nb_points):
 		draw_line(points_arc[index_point], points_arc[index_point + 1], color)
 	return points_arc
+
+#~~~~~~~~~~~~~~~~~~~~~~Tocar somvison~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+func playDrawSound():
+	randomize()
+	$DrawSound.pitch_scale = rand_range(0.9,1.1)
+	$DrawSound.play()
+	pass

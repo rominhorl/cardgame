@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Deck.gd" type="Script" id=1]
 [ext_resource path="res://card shapes/deck.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sound/cardSlide8.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 82, 144.75 )
@@ -36,6 +37,9 @@ position = Vector2( 110, 156.75 )
 shape = SubResource( 1 )
 
 [node name="Hand" type="Node2D" parent="."]
+
+[node name="DrawSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="mouse_entered" from="Deck/DeckArea" to="." method="_on_DeckArea_mouse_entered"]
 [connection signal="mouse_exited" from="Deck/DeckArea" to="." method="_on_DeckArea_mouse_exited"]
