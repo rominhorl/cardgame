@@ -6,6 +6,7 @@ var MouseHovering = false
 var DeltaVar
 var CardSpeedMove = 600
 
+
 func _physics_process(delta):
 	DeltaVar = delta
 	OrganizeSlot(CardList, DeltaVar)
@@ -18,9 +19,12 @@ func CardPlaced(name):
 			CardList.append(name)
 			get_parent().get_node("Deck&Hand/Hand").get_node(name).z_index = CardList.size()
 			emit_signal("PositionValid")
+			emit_signal("CountPointsCaatinga", CardList.size())
 			CardMatch = false
+			
 
 signal PositionValid
+signal CountPointsCaatinga(Points)
 
 func OrganizeSlot(CardList, delta):	
 	if CardList.size() > 0:
@@ -51,3 +55,6 @@ func _on_SlotAreaCaatinga_mouse_entered():
 
 func _on_SlotAreaCaatinga_mouse_exited():
 	MouseHovering = false
+
+
+

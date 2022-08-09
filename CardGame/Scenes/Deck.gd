@@ -32,6 +32,7 @@ func _on_DeckArea_mouse_exited():
 
 
 func draw_a_card():
+	print('a')
 	CardNamer += 1
 	randomize()
 	var CardRandom = randi()%CardList.CardList.size()
@@ -49,6 +50,8 @@ func draw_a_card():
 	CardsHand.append(NewCard.name)
 	$Hand.add_child(NewCard)
 	
+
+
 #~~~~~~~~~~~~~~~~~~~~~~Organizar a mão~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 
 func OrganizeHand(delta,CardSpeedMove):

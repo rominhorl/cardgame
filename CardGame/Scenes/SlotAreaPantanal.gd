@@ -16,12 +16,13 @@ func CardPlaced(name):
 		IsCardRelationValid(name)
 		if CardMatch == true:
 			CardList.append(name)
-#			get_parent().get_node("Deck&Hand/Hand").get_node(name).position = position + Vector2(0+100*CardList.size(),0)
 			get_parent().get_node("Deck&Hand/Hand").get_node(name).z_index = CardList.size()
 			emit_signal("PositionValid")
+			emit_signal("CountPointsPantanal", CardList.size())
 			CardMatch = false
 
 signal PositionValid
+signal CountPointsPantanal(Points)
 
 func OrganizeSlot(CardList, delta):	
 	if CardList.size() > 0:

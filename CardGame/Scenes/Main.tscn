@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Deck.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Scenes/SlotAreaAmazonia.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/SlotAreaPantanal.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/SlotAreaAtlantica.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/PointsLabel.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/UI.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/turn phase.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/TurnLabel.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 307, 145 )
@@ -106,6 +110,71 @@ position = Vector2( 1205, 533 )
 [node name="Deck&Hand" parent="." instance=ExtResource( 1 )]
 margin_top = 1.0
 margin_bottom = 1.0
+
+[node name="UI" type="Control" parent="."]
+margin_left = 3.0
+margin_right = 43.0
+margin_bottom = 40.0
+script = ExtResource( 9 )
+
+[node name="TimeLabel" type="Label" parent="UI"]
+margin_left = 22.0
+margin_top = 832.0
+margin_right = 169.0
+margin_bottom = 912.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TurnLabel" type="Label" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 8.283
+margin_left = 21.0
+margin_top = 937.0
+margin_right = 130.0
+margin_bottom = 656.68
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 11 )
+
+[node name="PointsLabel" type="Label" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 8.283
+margin_left = 21.0
+margin_top = 1013.0
+margin_right = 130.0
+margin_bottom = 732.68
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1111111"
+script = ExtResource( 8 )
+
+[node name="turn phase" type="Label" parent="UI"]
+margin_left = 17.0
+margin_top = 791.0
+margin_right = 117.0
+margin_bottom = 805.0
+script = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1880.0
+margin_bottom = 1040.0
+color = Color( 0.219608, 0.223529, 0.313726, 1 )
+
+[node name="Label" type="Label" parent="UI/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -7.0
+margin_right = 69.0
+margin_bottom = 7.0
+rect_scale = Vector2( 4, 4 )
+text = "Cick Anywhere to Start"
+align = 1
+valign = 1
 
 [connection signal="mouse_entered" from="SlotAreaCaatinga" to="SlotAreaCaatinga" method="_on_SlotAreaCaatinga_mouse_entered"]
 [connection signal="mouse_exited" from="SlotAreaCaatinga" to="SlotAreaCaatinga" method="_on_SlotAreaCaatinga_mouse_exited"]

@@ -5,7 +5,7 @@ extends Label
 # var a = 2
 # var b = "text"
 func _process(delta):
-	text = get_parent().get_parent().turnPhase
+	text = get_parent().turnPhase
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
