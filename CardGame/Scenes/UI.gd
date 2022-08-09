@@ -20,11 +20,18 @@ var drawTimer = 0
 var drawInterval = 0.5
 
 # play variables
-var baseTime = 24
-var decRate = 3
+var baseTime = 12
+var minTime = 6
+var decRate = 2
 var skipPlay = false
 var turnTimeNow = 0
 var isTimerOn = false
+
+# end variables
+var maxNumberOfCards = 10
+
+func _ready():
+	$ColorRect.show()
 
 func _process(delta):
 	turnManager(delta)
@@ -73,7 +80,7 @@ func draw_phase(delta):
 		print('drawn a card')
 		emit_signal("TimeToDraw")
 		cardsDrawn += 1
-		cardQnt += 1
+		#cardQnt += 1
 		drawTimer = 0
 	
 	elif cardsDrawn == cardsQntToDraw:
@@ -90,7 +97,10 @@ func play_phase(delta):
 	elif (turn == 1) and (turnCycle == 0):
 		print('setting play phase')
 		turnTimeNow = baseTime
-	
+
+	if (turnCycle == 0) and (turnTimeNow < minTime):
+		turnTimeNow = minTime
+
 	$TimeLabel.text = "%02d" % [turnTimeNow]
 	turnCycle += 1
 	
@@ -110,17 +120,20 @@ func play_phase(delta):
 
 
 func end_phase():
-	if cardQnt <= 7:
+	if cardQnt <= (maxNumberOfCards - normalQntDrawn):
 		print('player wont overdraw, starting another round')
 		turn += 1
 		turnPhase = 'draw'
-	if cardQnt > 7:
-		print('player will overdraw, end game')
+	if cardQnt > (maxNumberOfCards - normalQntDrawn):
+		print('player will overdraw, player lost')
+		get_tree().change_scene("res://Scenes/Main.tscn")
 		# morreu
 		pass
 	pass
 
-
+func updateCardHandSize(size):
+	print('na mao tem' + str(size))
+	cardQnt = size
 
 func _on_Button_pressed():
 	skipPlay = true

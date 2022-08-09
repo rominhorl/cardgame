@@ -10,6 +10,8 @@ var CardNamer = 0
 var deltaVar
 var CardSpeedMove = 600
 
+signal CardsHandSize(size)
+
 func _ready():
 	HandPoints = draw_circle_arc(MidScreen+Vector2(0,MidScreen.y*1.2), get_viewport().size.x*0.4, get_viewport().size.y*0.25, -90, 90, Color(0.0, 1.0, 0.0))
 
@@ -50,6 +52,7 @@ func draw_a_card():
 	CardsHand.append(NewCard.name)
 	playDrawSound()
 	$Hand.add_child(NewCard)
+	emit_signal("CardsHandSize",CardsHand.size())
 	
 
 

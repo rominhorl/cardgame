@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Deck.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=2]
@@ -7,14 +7,91 @@
 [ext_resource path="res://Scenes/SlotAreaAmazonia.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/SlotAreaPantanal.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/SlotAreaAtlantica.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/PointsLabel.gd" type="Script" id=8]
+[ext_resource path="res://Assets/font/Kenney Future.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Scenes/UI.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/turn phase.gd" type="Script" id=10]
-[ext_resource path="res://Scenes/TurnLabel.gd" type="Script" id=11]
+[ext_resource path="res://Assets/font/Kenney Future Narrow.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/sound/cardPlace1.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 307, 145 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+outline_size = 3
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Label
+
+func _process(delta):
+	text = \"Turn:\" + str(get_parent().turn)
+"
+
+[sub_resource type="DynamicFont" id=6]
+size = 52
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Label
+
+var PointAmazonia = 0
+var PointCaatinga = 0
+var PointAtlantica = 0
+var PointPantanal = 0
+var Points = 0
+
+func _process(delta):
+	Points = PointAmazonia + PointCaatinga + PointAtlantica + PointPantanal
+	#text = str(\"%3d\" % Points)
+	text = \"%03d\" % Points
+
+
+func _ready():
+	pass # Replace with function body.
+
+
+
+func getPointsAmazonia(points):
+	 PointAmazonia = points
+
+func getPointsCaatinga(points):
+	 PointCaatinga = points
+	
+func getPointsAtlantica(points):
+	 PointAtlantica = points
+	
+func getPointsPantanal(points):
+	 PointPantanal = points
+"
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+func _process(delta):
+	text = get_parent().turnPhase
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -131,42 +208,65 @@ margin_bottom = 40.0
 script = ExtResource( 9 )
 
 [node name="TimeLabel" type="Label" parent="UI"]
-margin_left = 22.0
-margin_top = 832.0
+margin_left = 24.0
+margin_top = 829.0
 margin_right = 169.0
-margin_bottom = 912.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_bottom = 919.0
+custom_colors/font_color = Color( 0.164706, 0.160784, 0.215686, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 autowrap = true
 
 [node name="TurnLabel" type="Label" parent="UI"]
-anchor_right = 1.0
-anchor_bottom = 8.283
-margin_left = 21.0
-margin_top = 937.0
-margin_right = 130.0
-margin_bottom = 656.68
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-script = ExtResource( 11 )
+margin_left = 24.0
+margin_top = 936.0
+margin_right = 161.0
+margin_bottom = 964.0
+custom_colors/font_color = Color( 0.164706, 0.160784, 0.215686, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Turn: 1"
+valign = 1
+autowrap = true
+script = SubResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="PointsLabel" type="Label" parent="UI"]
-anchor_right = 1.0
-anchor_bottom = 8.283
-margin_left = 21.0
-margin_top = 1013.0
-margin_right = 130.0
-margin_bottom = 732.68
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "1111111"
-script = ExtResource( 8 )
+margin_left = 15.0
+margin_top = 1009.0
+margin_right = 171.0
+margin_bottom = 1068.0
+custom_colors/font_color = Color( 0.164706, 0.160784, 0.215686, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "000"
+align = 1
+valign = 1
+autowrap = true
+script = SubResource( 7 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="turn phase" type="Label" parent="UI"]
-margin_left = 17.0
-margin_top = 791.0
-margin_right = 117.0
-margin_bottom = 805.0
-script = ExtResource( 10 )
+margin_left = 24.0
+margin_top = 962.0
+margin_right = 161.0
+margin_bottom = 989.0
+custom_colors/font_color = Color( 0.164706, 0.160784, 0.215686, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Draw"
+valign = 1
+autowrap = true
+script = SubResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
 visible = false
