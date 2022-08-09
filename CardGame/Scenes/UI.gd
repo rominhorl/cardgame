@@ -47,6 +47,7 @@ func turnManager(delta):
 				
 		"draw":
 			# draw rules
+			playMusic()
 			draw_phase(delta)
 			skipPlay = false
 			
@@ -130,6 +131,14 @@ func end_phase():
 		# morreu
 		pass
 	pass
+
+func playMusic():
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
+
+
+
+
 
 func updateCardHandSize(size):
 	print('na mao tem' + str(size))
