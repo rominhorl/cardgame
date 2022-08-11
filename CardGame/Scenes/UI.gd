@@ -128,6 +128,12 @@ func end_phase():
 		turnPhase = 'draw'
 	if cardQnt > (maxNumberOfCards - normalQntDrawn):
 		print('player will overdraw, player lost')
+		get_parent().get_node("SlotAreaAmazonia").visible = false
+		get_parent().get_node("SlotAreaCaatinga").visible = false
+		get_parent().get_node("SlotAreaAtlantica").visible = false
+		get_parent().get_node("SlotAreaPantanal").visible = false
+		get_parent().get_node("Deck&Hand").visible = false
+		get_parent().get_node("UI").visible = false
 		get_parent().get_node("EndScreen").visible = true
 		get_parent().get_node("EndScreen/Label5").text = "%03d points" % get_node("PointsLabel").Points
 		

@@ -63,6 +63,10 @@ custom_fonts/font = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 text = "Quit"
 
+[node name="LogoMinimalistaSemBg" type="Sprite" parent="."]
+position = Vector2( 1341, 356 )
+texture = ExtResource( 8 )
+
 [node name="HowToPlay" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -212,10 +216,6 @@ custom_fonts/font = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 disabled = true
 text = "Menu"
-
-[node name="LogoMinimalistaSemBg" type="Sprite" parent="."]
-position = Vector2( 1341, 356 )
-texture = ExtResource( 8 )
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="HowToPlaybtn" to="." method="_on_HowToPlaybtn_pressed"]
