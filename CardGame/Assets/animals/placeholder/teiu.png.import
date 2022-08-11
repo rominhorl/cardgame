@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Teiu.png-8764540fbd5bd68c4b69f3b431757869.stex"
+path="res://.import/teiu.png-a7e9cc7e5c7d6eed9e3f0bfa794a77f2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/animals/placeholder/Teiu.png"
-dest_files=[ "res://.import/Teiu.png-8764540fbd5bd68c4b69f3b431757869.stex" ]
+source_file="res://Assets/animals/placeholder/teiu.png"
+dest_files=[ "res://.import/teiu.png-a7e9cc7e5c7d6eed9e3f0bfa794a77f2.stex" ]
 
 [params]
 

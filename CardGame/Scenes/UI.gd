@@ -2,6 +2,7 @@ extends Control
 
 signal TimeToDraw
 
+
 # general variables
 var isPlayerTurn = false
 var turnCycle = 0
@@ -127,8 +128,9 @@ func end_phase():
 		turnPhase = 'draw'
 	if cardQnt > (maxNumberOfCards - normalQntDrawn):
 		print('player will overdraw, player lost')
-		get_tree().change_scene("res://Scenes/Main.tscn")
-		# morreu
+		get_parent().get_node("EndScreen").visible = true
+		get_parent().get_node("EndScreen/Label5").text = "%03d points" % get_node("PointsLabel").Points
+		
 		pass
 	pass
 
